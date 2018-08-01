@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "firebase": "^5.2.0",
-    "firebase-admin": "^5.13.1",
     "npm-sass": "^2.3.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
