@@ -5,10 +5,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        App component
+        Hello hari
       </div>
     );
   }
 }
 
-export default App;
+      export default App;
