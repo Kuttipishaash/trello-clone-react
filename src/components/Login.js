@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { loginUser } from '../firebase/firebase-auth';
+import { NavLink } from 'react-router-dom';
 
 export default class Login extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ export default class Login extends Component {
 
     inputValueChange = (e) => {
         this.setState({
-            [e.target.name] : e.target.value
+            [e.target.name]: e.target.value
         });
     }
 
@@ -38,6 +39,8 @@ export default class Login extends Component {
                         <input type="password" name="password" value={this.state.password} onChange={this.inputValueChange} />
                     </label>
                     <button type="submit">Login</button>
+                    <NavLink to="/signup">Sign Up</NavLink>
+                    
                 </form>
             </div>
         )

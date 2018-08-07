@@ -2,11 +2,11 @@ import { authentication, firestore } from './firebase';
 
 const currentUser = authentication.currentUser;
 
-const registerUser = (email, password) => {
-    authentication.createUserWithEmailAndPassword(email, password)
+const registerUser = (user) => {
+    authentication.createUserWithEmailAndPassword(user.email, user.password)
         .then(() => {
             const registeredUser = authentication.currentUser;
-            let user = {
+            let regUser = {
                 // displayName: currentUser.displayName,
                 userid: registeredUser.uid,
                 email: registeredUser.email,
@@ -14,8 +14,8 @@ const registerUser = (email, password) => {
                 // emailVerified = currentUser.emailVerified
             };
             firestore.collection('users')
-                .doc(user.userid)
-                .set(user)
+                .doc(regUser.userid)
+                .set(regUser)
                 .then(() => {
                     console.log("User registered");
                     return true;
